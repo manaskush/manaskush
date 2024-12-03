@@ -388,7 +388,7 @@ export default function Home() {
               <p className="text-muted-foreground text-lg ">
                 Feel free to reach out to me on{" "}
                 <LinkPreview
-                  url="https://discord.gg"
+                  url="https://discord.gg/WgfqpPRn"
                   className="font-bold"
                 >
                   <PiDiscordLogoFill className="h-6 w-6 inline text-indigo-500" />{" "}
