@@ -190,7 +190,7 @@ const projects = [
     description: "E-commerce platform for digital products",
     link:"https://ventesinfotech-wqb5.vercel.app/",
     date: "2024-2025",
-    image: "/images/wecare.webp",
+    image: "/images/uploadify.png",
   },
   {
     title: "Satoshi Farm Telegram Game",
@@ -384,17 +384,7 @@ export default function Home() {
               </h1>
 
               <p className="text-muted-foreground text-lg md:pr-8">
-                I have a{" "}
-                <LinkPreview
-                  url="https://www.youtube.com/@manaskush4529"
-                  className="font-bold text-rose-500 underline"
-                >
-                  <PiYoutubeLogoFill className="h-6 w-6 inline text-red-500" />
-                  <span className="ml-1">YouTube channel</span>
-                </LinkPreview>{" "}
-                where I share my knowledge and experience with the community.
-              </p>
-
+            A passionate innovator and problem-solver who thrives on turning ideas into impactful solutions. With creativity, determination, and a drive to excel, I aim to make a difference in every project I take on. Let&apos;s create something amazing together! 🌟</p>
               <p className="text-muted-foreground text-lg ">
                 Feel free to reach out to me on{" "}
                 <LinkPreview
