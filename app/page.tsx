@@ -188,7 +188,7 @@ const projects = [
   {
     title: "Ventes E-Commerce",
     description: "E-commerce platform for digital products",
-    link:"https://prospera-psi.vercel.app/",
+    link:"https://ventesinfotech-wqb5.vercel.app/",
     date: "2024-2025",
     image: "/images/wecare.webp",
   },
@@ -410,7 +410,7 @@ export default function Home() {
           </div>
           <Element name="resume" className="mt-10 resume   center-on-phone">
             <a href="https://drive.google.com/file/d/1ilo2yAErvclwL3EEbs1HX8hBSYEHIWgO/view?usp=sharing" className="text-xl  resumei rounded-xl p-4  bg-slate-400 pt-15 font-semibold">
-            Resume
+            View My Resume
             </a>
           </Element>
           
