@@ -272,6 +272,7 @@ export default function Home() {
   const [isHidden, setIsHidden] = useState(false);
   const { scrollY } = useScroll();
   const lastYRef = useRef(0);
+  const phoneNumber=8534982098;
 
   useMotionValueEvent(scrollY, 'change', (y) => {
     const difference = y - lastYRef.current;
@@ -354,7 +355,7 @@ export default function Home() {
               alt="Igor"
               width={10000}
               height={10000}
-              className="rounded-xl w-40 mt-4"
+              className="rounded-xl w-40 mt-4 profile"
             />
 
             <div className="space-y-2">
@@ -407,11 +408,12 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <Element name="resume">
-            <a href="" className="">
-              Resume
+          <Element name="resume" className="mt-10 resume   center-on-phone">
+            <a href="https://drive.google.com/file/d/1ilo2yAErvclwL3EEbs1HX8hBSYEHIWgO/view?usp=sharing" className="text-xl  resumei rounded-xl p-4  bg-slate-400 pt-15 font-semibold">
+            Resume
             </a>
           </Element>
+          
 
           {/* <Element
           

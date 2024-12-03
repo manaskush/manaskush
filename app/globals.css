@@ -74,3 +74,31 @@
       @apply bg-background text-foreground;
     }
   }
+
+/* Default (non-centered) styles */
+.resume {
+  padding-top: 20px;
+  margin: 10px auto; /* Or any default styles */
+  display: block;
+}
+
+/* Center only for screens smaller than 768px */
+@media (max-width: 768px) {
+  .center-on-phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Optional for text */
+    margin-top: 20px;
+  }
+  /* .resumei{
+    width: 40px;
+    height: 20px;
+  } */
+   .profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25%;
+   }
+}
