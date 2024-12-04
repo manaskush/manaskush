@@ -21,13 +21,13 @@ const ContactMe: React.FC = () => {
 
   return (
     <div className="contact-container">
-      {/* "Contact Me" button */}
+      {/* "Contact Me" button, visible on both mobile and desktop */}
       <button
         className="contact-button"
         onClick={toggleContactBox}
         style={{
-          backgroundColor: '#0073e6',
-          color: 'white',
+          backgroundColor: '#94a3b8',
+          color: 'black',
           padding: '14px 24px',
           borderRadius: '10px',
           border: 'none',
@@ -35,7 +35,7 @@ const ContactMe: React.FC = () => {
           fontWeight: '600',
           cursor: 'pointer',
           transition: 'all 0.3s ease',
-          display: 'block', // Ensure the button is visible by default on mobile
+          display: 'block', // Ensure the button is visible on both mobile and desktop
         }}
       >
         Contact Me
@@ -60,10 +60,10 @@ const ContactMe: React.FC = () => {
           }}
         >
           <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '10px', color: '#333' }}>
-            Want to hire me as a freelancer? Let&apos;s discuss.
+            Want to hire me as a freelancer? Let's discuss.
           </h3>
           <p style={{ fontSize: '14px', color: '#666', marginBottom: '20px' }}>
-            Drop your message and let&apos;s discuss your project.
+            Drop your message and let's discuss your project.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {/* WhatsApp Button */}
@@ -119,26 +119,14 @@ const ContactMe: React.FC = () => {
           z-index: 1000;
         }
 
-        /* Only show the button on mobile */
-        @media (max-width: 768px) {
-          .contact-button {
-            display: block;
-          }
-
-          .contact-details {
-            display: ${isOpen ? 'block' : 'none'}; /* Toggle visibility based on state */
-          }
+        /* Ensure the "Contact Me" button is visible on both mobile and desktop */
+        .contact-button {
+          display: block; /* Ensure button is always visible */
         }
 
-        /* For desktop, hide the contact details and keep button visible */
-        @media (min-width: 768px) {
-          .contact-button {
-            display: none; /* Hide button on desktop */
-          }
-
-          .contact-details {
-            display: none;
-          }
+        /* Hide the contact details until the button is clicked */
+        .contact-details {
+          display: ${isOpen ? 'block' : 'none'}; /* Toggle visibility based on state */
         }
       `}</style>
     </div>
