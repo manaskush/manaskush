@@ -248,15 +248,15 @@ const education = [
 const skills =  [
   {
     title: 'Programming Languages',
-    description: "JavaScript, TypeScript, Python, Java, C++, Rust, Go, PHP, C",
+    description: "JavaScript, TypeScript, Python, Java, C++,  PHP, C",
   },
   {
     title: 'Web Technologies',
-    description: "React, Next.js, Svelte, Node.js, Express",
+    description: "React, Next.js, Svelte, Node.js, Express, Redux",
   },
   {
     title: 'Mobile Development',
-    description: "Kotlin, React Native, Flutter",
+    description: "Kotlin, React Native, Flutter, Expo",
   },
   {
     title: 'Cloud & DevOps',
@@ -266,14 +266,14 @@ const skills =  [
     title: 'Databases',
     description: "MongoDB, PostgreSQL, MySQL, Redis, MariaDB",
   },
-  {
-    title: 'Frontend Frameworks & Libraries',
-    description: "Redux, Tailwind CSS, Bootstrap, Material-UI, Chakra-UI",
-  },
-  {
-    title: 'Backend & Serverless',
-    description: "Laravel, FastAPI, Firebase, Supabase, Vercel",
-  },
+  // {
+  //   title: 'Frontend Frameworks & Libraries',
+  //   description: "Redux, Tailwind CSS, Bootstrap, Material-UI, Chakra-UI",
+  // },
+  // {
+  //   title: 'Backend & Serverless',
+  //   description: "Laravel, FastAPI, Firebase, Supabase, Vercel",
+  // },
   {
     title: 'Data Science & ML',
     description: "Jupyter, NumPy, Pandas",
