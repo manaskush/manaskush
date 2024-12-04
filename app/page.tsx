@@ -10,6 +10,7 @@ import { PiDiscordLogoFill, PiYoutubeLogoFill } from "react-icons/pi";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 import { Link as ScrollLink, Element } from "react-scroll";
+import IconCloud from "@/components/ui/icon-cloud";
 
 const videos = [
   {
@@ -244,6 +245,45 @@ const education = [
   },
 ];
 
+const skills =  [
+  {
+    title: 'Programming Languages',
+    description: "JavaScript, TypeScript, Python, Java, C++, Rust, Go, PHP, C",
+  },
+  {
+    title: 'Web Technologies',
+    description: "React, Next.js, Svelte, Node.js, Express",
+  },
+  {
+    title: 'Mobile Development',
+    description: "Kotlin, React Native, Flutter",
+  },
+  {
+    title: 'Cloud & DevOps',
+    description: "AWS, Google Cloud, Docker, Kubernetes, GitHub",
+  },
+  {
+    title: 'Databases',
+    description: "MongoDB, PostgreSQL, MySQL, Redis, MariaDB",
+  },
+  {
+    title: 'Frontend Frameworks & Libraries',
+    description: "Redux, Tailwind CSS, Bootstrap, Material-UI, Chakra-UI",
+  },
+  {
+    title: 'Backend & Serverless',
+    description: "Laravel, FastAPI, Firebase, Supabase, Vercel",
+  },
+  {
+    title: 'Data Science & ML',
+    description: "Jupyter, NumPy, Pandas",
+  },
+  {
+    title: 'Other Tools & Technologies',
+    description: "Git, npm, Yarn, VSCode, Postman, Figma, Adobe XD, Linux, macOS, Windows",
+  },
+];
+
 
 const navbar = [
   {
@@ -262,9 +302,42 @@ const navbar = [
     title: "Education",
     link: "education",
   },
+  {
+    title: "Skills",
+    link: "skills",
+  },
 ];
 
-
+const icons = [
+  // Programming Languages
+  'javascript', 'typescript', 'python', 'java', 'cpp', 'rust', 'go', 'php', 'c',
+  
+  // Web Technologies
+  'react', 'nextdotjs',  'svelte', 'nodejs', 'express', 
+  // Mobile Development
+  'kotlin', 'reactnative', 'flutter','expo', 
+  
+  // Cloud & DevOps
+  'amazonaws', 'googlecloud', 'docker', 'kubernetes',  'github', 
+  
+  // Databases
+  'mongodb', 'postgresql', 'mysql', 'redis', 'mariadb', 
+  
+  // Frontend Frameworks & Libraries
+  'redux', 'tailwindcss', 'bootstrap', 'materialui', 'chakraui', 
+  
+  // Backend & Serverless
+   'laravel', 'fastapi', 'firebase', 'supabase',  'vercel',
+  
+  // // Data Science & ML
+  // 'tensorflow', 'pytorch', 'jupyter', 'numpy', 'pandas', 'scikit-learn', 'keras', 'opencv',
+  
+    // Data Science & ML
+    'jupyter', 'numpy', 'pandas', 
+  
+  // Other Tools & Technologies
+  'git', 'npm', 'yarn', 'vscode', 'visualstudiocode', 'postman', 'figma', 'adobexd', 'linux', 'macos', 'windows'
+]
 
 
 export default function Home() {
@@ -329,7 +402,7 @@ export default function Home() {
               text-center flex items-center justify-center
                cursor-pointer hover:bg-gray-50">Contact</DialogTrigger>
               <DialogContent>
-                <InlineWidget url="https://calendly.com/birdsoftware/15min" />
+                <InlineWidget url="" />
               </DialogContent>
             </Dialog>   
 
@@ -352,7 +425,7 @@ export default function Home() {
           <div className="md:flex md:gap-x-10 items-center md:pt-28">
             <Image
               src={"/images/manas.jpg"}
-              alt="Igor"
+              alt="Manas"
               width={10000}
               height={10000}
               className="rounded-xl w-40 mt-4 profile"
@@ -403,6 +476,8 @@ export default function Home() {
             View My Resume
             </a>
           </Element>
+          
+         
           
 
           {/* <Element
@@ -461,6 +536,55 @@ export default function Home() {
             ))}
           </Element> */}
 
+<Element
+          name="work"
+          
+          >
+            <h2 className="text-xl pt-10 font-semibold">Work Experience</h2>
+            {experience.map((item) => (
+              <div key={item.title} className="my-4">
+                <div
+                  className="
+               md:flex justify-between 
+              cursor-pointer items-center 
+              border rounded-2xl p-4
+              bg-white
+              "
+                >
+                  <div className="flex items-center gap-x-4">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      width={100}
+                      height={100}
+                      className="
+                   rounded-md
+                     w-20
+                      p-2
+              "
+                    />
+
+                    <div className="">
+                      <h2 className="text-md font-semibold mt-4 md:mt-0">
+                        {item.title}
+                      </h2>
+                      <p className="text-muted-foreground ">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="text-muted-foreground text-sm mt-4 md:mt-0">
+                      {" "}
+                      {item.date}{" "}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Element>
+
           <Element
           name="projects"
           
@@ -501,55 +625,34 @@ export default function Home() {
             </div>
           </Element>
 
-          <Element
-          name="work"
-          
-          >
-            <h2 className="text-xl pt-10 font-semibold">Work Experience</h2>
-            {experience.map((item) => (
-              <div key={item.title} className="my-4">
-                <div
-                  className="
-               md:flex justify-between 
-              cursor-pointer items-center 
-              border rounded-2xl p-4
-              bg-white
-              
-              "
-                >
-                  <div className="flex items-center gap-x-4">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      width={100}
-                      height={100}
-                      className="
-                   rounded-md
-                     w-20
-                      p-2
-              "
-                    />
-
-                    <div className="">
-                      <h2 className="te  xt-md font-semibold mt-4 md:mt-0">
-                        {item.title}
-                      </h2>
-                      <p className="text-muted-foreground ">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="text-muted-foreground text-sm mt-4 md:mt-0">
-                      {" "}
-                      {item.date}{" "}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <Element name="skillheader">
+            <h1  className="text-xl pt-10 font-semibold justify-center ">Skill Globe</h1>
           </Element>
+
+          <Element name="skills" className="mt-10 skills   center-on-phone">
+            <IconCloud iconSlugs={icons}/>
+          </Element>
+
+          <h2 className="text-3xl pt-10 font-bold text-gray-800 mb-6">Skills</h2>
+<div className="space-y-8">
+  {skills.map((skill) => (
+    <div
+      key={skill.title}
+      className="rounded-xl border border-gray-200 shadow-md p-6 bg-gradient-to-br from-white to-gray-50 hover:shadow-lg transition-all"
+    >
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        <div className="flex flex-col gap-2">
+          <h3 className="text-xl font-semibold text-gray-700">{skill.title}</h3>
+          <p className="text-sm text-gray-600 leading-relaxed">
+            {skill.description}
+          </p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+
 
 
           <Element
