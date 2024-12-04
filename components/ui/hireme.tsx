@@ -58,10 +58,10 @@ const ContactMe: React.FC = () => {
           }}
         >
           <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '10px', color: '#333' }}>
-            Want to hire me as a freelancer? Let's discuss.
+            Want to hire me as a freelancer? Let&apos;s discuss.
           </h3>
           <p style={{ fontSize: '14px', color: '#666', marginBottom: '20px' }}>
-            Drop your message and let's discuss your project.
+            Drop your message and let&apos;s discuss your project.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <button
