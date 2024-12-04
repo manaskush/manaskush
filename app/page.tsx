@@ -11,6 +11,8 @@ import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 import { Link as ScrollLink, Element } from "react-scroll";
 import IconCloud from "@/components/ui/icon-cloud";
+import HireFreelancer from "@/components/ui/hireme";
+import ContactMe from "@/components/ui/hireme";
 
 const videos = [
   {
@@ -340,6 +342,7 @@ const icons = [
 ]
 
 
+
 export default function Home() {
 
   const [isHidden, setIsHidden] = useState(false);
@@ -355,15 +358,19 @@ export default function Home() {
     }
   })
 
+  const handleSubmit = (email: string) => {
+    // Handle the email submission, e.g., send it to a backend API
+    console.log('Submitted email:', email);
+  };
 
 
   return (
     <div>
       <motion.div
-      initial={{ y:0, opacity:0 }}
-      animate={{ y:0, opacity:10 }}
-      transition={{ duration: 2 }}
-        className="min-h-screen w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)]
+       initial={{ y: 0, opacity: 0 }}
+       animate={{ y: 0, opacity: 10 }}
+       transition={{ duration: 2 }}
+       className="min-h-screen w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)]
      [background-size:16px_16px] 
      [mask-image:radial-gradient(ellipse_100%_100%_at_50%_50%,#000_70%,transparent_100%)]"
       >
@@ -701,6 +708,9 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </Element>
+          <Element className="mt-10 hireme" name="hireme">
+          <ContactMe/>
           </Element>
         </div>
       </motion.div>
