@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FaWhatsapp } from 'react-icons/fa'; // WhatsApp outlined icon
+import { AiOutlineMail } from 'react-icons/ai'; // Gmail outlined icon
 
 const ContactMe: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +26,7 @@ const ContactMe: React.FC = () => {
         className="contact-button"
         onClick={toggleContactBox}
         style={{
-          backgroundColor: '#0073e6',
+          backgroundColor:'#64748b',
           color: 'white',
           padding: '14px 24px',
           borderRadius: '10px',
@@ -36,7 +38,7 @@ const ContactMe: React.FC = () => {
           display: 'block', // Ensure the button is visible by default on mobile
         }}
       >
-        Tap Me !
+        Contact Me
       </button>
 
       {/* Contact details section (WhatsApp, Email) */}
@@ -58,12 +60,13 @@ const ContactMe: React.FC = () => {
           }}
         >
           <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '10px', color: '#333' }}>
-            Want to hire me as a freelancer? Let&apos;s discuss.
+            Want to hire me as a freelancer? Let's discuss.
           </h3>
           <p style={{ fontSize: '14px', color: '#666', marginBottom: '20px' }}>
-            Drop your message and let&apos;s discuss your project.
+            Drop your message and let's discuss your project.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            {/* WhatsApp Button */}
             <button
               onClick={handleWhatsAppClick}
               style={{
@@ -80,8 +83,11 @@ const ContactMe: React.FC = () => {
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#128C7E')}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#25D366')}
             >
+              <FaWhatsapp className="inline-block mr-2" size={20} /> {/* WhatsApp Icon */}
               Chat on WhatsApp
             </button>
+
+            {/* Email Button */}
             <button
               onClick={handleEmailClick}
               style={{
@@ -98,6 +104,7 @@ const ContactMe: React.FC = () => {
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#005bb5')}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#0073e6')}
             >
+              <AiOutlineMail className="inline-block mr-2" size={20} /> {/* Gmail Icon */}
               Write me a mail
             </button>
           </div>
