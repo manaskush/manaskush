@@ -412,13 +412,7 @@ export default function Home() {
          
 
           <div className="md:flex md:gap-x-10 items-center md:pt-28">
-            <Image
-              src={"/images/manas.jpg"}
-              alt="Manas"
-              width={10000}
-              height={10000}
-              className="rounded-xl w-40 mt-4 profile"
-            />
+           
 
             <div className="space-y-2">
             <motion.div
@@ -459,6 +453,13 @@ export default function Home() {
                 I am always happy to help.
               </p>
             </div>
+            <Image
+              src={"/images/manas.jpg"}
+              alt="Manas"
+              width={10000}
+              height={10000}
+              className="rounded-xl w-40 mt-4 z-150 profile"
+            />
           </div>
           </div>
           <Element name="resume" className="mt-10 resume  bg-white center-on-phone">
