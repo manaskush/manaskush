@@ -1,6 +1,4 @@
-"use client";
-
-import React, { PropsWithChildren, useRef } from "react";
+import React, { PropsWithChildren, useRef, useEffect, useState } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
@@ -31,9 +29,20 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       direction = "bottom",
       ...props
     },
-    ref,
+    ref
   ) => {
     const mouseX = useMotionValue(Infinity);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Detect if it's a mobile device
+    useEffect(() => {
+      const checkIsMobile = () => {
+        setIsMobile(window.innerWidth <= 768); // You can adjust the threshold as needed
+      };
+      checkIsMobile();
+      window.addEventListener("resize", checkIsMobile);
+      return () => window.removeEventListener("resize", checkIsMobile);
+    }, []);
 
     const renderChildren = () => {
       return React.Children.map(children, (child) => {
@@ -49,10 +58,31 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       });
     };
 
+    const handleMouseMove = (e: React.MouseEvent) => {
+      if (!isMobile) {
+        mouseX.set(e.pageX); // Update mouseX for desktop
+      }
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+      if (isMobile) {
+        const touch = e.touches[0]; // Get the first touch point
+        mouseX.set(touch.pageX); // Update mouseX for mobile
+      }
+    };
+
+    const handleTouchEnd = () => {
+      if (isMobile) {
+        mouseX.set(Infinity); // Reset the mouseX when touch ends
+      }
+    };
+
     return (
       <motion.div
         ref={ref}
-        onMouseMove={(e) => mouseX.set(e.pageX)}
+        onMouseMove={handleMouseMove}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         onMouseLeave={() => mouseX.set(Infinity)}
         {...props}
         className={cn(dockVariants({ className }), {
@@ -64,10 +94,10 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
         {renderChildren()}
       </motion.div>
     );
-  },
+  }
 );
 
-Dock.displayName = "Manas Kush";
+Dock.displayName = "Dock";
 
 export interface DockIconProps {
   size?: number;
@@ -99,7 +129,7 @@ const DockIcon = ({
   const widthSync = useTransform(
     distanceCalc,
     [-distance, 0, distance],
-    [40, magnification, 40],
+    [40, magnification, 40]
   );
 
   const width = useSpring(widthSync, {
@@ -114,7 +144,7 @@ const DockIcon = ({
       style={{ width }}
       className={cn(
         "flex aspect-square cursor-pointer items-center justify-center rounded-full",
-        className,
+        className
       )}
       {...props}
     >
