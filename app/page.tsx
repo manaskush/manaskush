@@ -151,6 +151,10 @@ const navbar = [
     title: "Skills",
     link: "skills",
   },
+  {
+    title: "Socials",
+    link: "socials",
+  },
 ];
 
 const icons = [
@@ -568,7 +572,7 @@ export default function Home() {
             
             <ContactMe/>
           </Element>
-          <Element name="footer">
+          <Element name="socials">
   <div className="relative flex h-[250px] w-full flex-col items-center justify-center overflow-hidden">
     <span className="connect pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
       Connect on Socials
