@@ -14,6 +14,8 @@ import IconCloud from "@/components/ui/icon-cloud";
 import HireFreelancer from "@/components/ui/hireme";
 import ContactMe from "@/components/ui/hireme";
 import { DockDemo } from "@/components/demos/dock-demo";
+import { cn } from "@/lib/utils";
+import ShinyButton from "@/components/ui/shiny-button";
 
 
 
@@ -238,21 +240,31 @@ export default function Home() {
               to={item.link}
               smooth={true}
               duration={500}
-              className='border px-4 py-3 rounded-xl text-center flex
-               items-center justify-center
-                cursor-pointer hover:bg-gray-100'>
+              className={cn(
+                "group relative inline-flex h-11 animate-rainbow cursor-pointer items-center justify-center rounded-xl border-0 bg-[length:200%] px-8 py-2 font-medium text-primary-foreground transition-colors [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+        
+                // before styles
+                "before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))] before:bg-[length:200%] before:[filter:blur(calc(0.8*1rem))]",
+        
+                // light mode colors
+                "bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))]",
+        
+                // dark mode colors
+                "dark:bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))]",
+        
+              )}>
                 {item.title}
                 </ScrollLink>
             ))}
 
-            <Dialog>
+            {/* <Dialog>
               <DialogTrigger className="border px-4 py-3 rounded-xl 
               text-center flex items-center justify-center
                cursor-pointer hover:bg-gray-50">Contact</DialogTrigger>
               <DialogContent>
                 <InlineWidget url="" />
               </DialogContent>
-            </Dialog>   
+            </Dialog>    */}
 
           </div>
 
@@ -262,12 +274,12 @@ export default function Home() {
 
         <div className="md:w-3/5 mx-auto px-6 md:px-0 pb-20 ">
           <div className="pt-10 justify-end items-center flex underline md:hidden">
-            <Dialog>
+            {/* <Dialog>
               <DialogTrigger>Contact</DialogTrigger>
               <DialogContent>
                 <InlineWidget url="https://calendly.com/birdsoftware/15min" />
               </DialogContent>
-            </Dialog>
+            </Dialog> */}
           </div>
 
           <div className="md:flex md:gap-x-10 items-center md:pt-28">
@@ -319,10 +331,12 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <Element name="resume" className="mt-10 resume   center-on-phone">
-            <a href="https://drive.google.com/file/d/1ilo2yAErvclwL3EEbs1HX8hBSYEHIWgO/view?usp=sharing" className="text-xl  resumei rounded-xl p-4  bg-slate-400 pt-15 font-semibold">
+          <Element name="resume" className="mt-10 resume  bg-white center-on-phone">
+            <ShinyButton>
+            <a href="https://drive.google.com/file/d/1ilo2yAErvclwL3EEbs1HX8hBSYEHIWgO/view?usp=sharing" className="text-xl  resumei rounded-xl p-4 pt-15 font-semibold">
             View My Resume
             </a>
+            </ShinyButton>
           </Element>
           
          
@@ -551,6 +565,7 @@ export default function Home() {
             ))}
           </Element>
           <Element className="mt-10 hireme" name="hireme">
+            
             <ContactMe/>
           </Element>
           <Element name="footer">

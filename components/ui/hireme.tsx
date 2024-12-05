@@ -1,6 +1,29 @@
 import React, { useState } from 'react';
-import { FaWhatsapp } from 'react-icons/fa'; // WhatsApp outlined icon
-import { AiOutlineMail } from 'react-icons/ai'; // Gmail outlined icon
+import { FaWhatsapp } from 'react-icons/fa';
+import { AiOutlineMail } from 'react-icons/ai';
+import { motion, Transition } from "framer-motion";
+import { cn } from "@/lib/utils";
+
+const animationProps = {
+  initial: { 
+    scale: 0.9 // Slightly bigger than the original
+  },
+  animate: { 
+    scale: 1.1 // Slightly bigger when animated
+  },
+  whileTap: { 
+    scale: 0.95 // Slightly reduce scale on tap
+  },
+  transition: {
+    repeat: Infinity,
+    repeatType: "loop",
+    duration: 1,
+    type: "spring",
+    stiffness: 20,
+    damping: 15,
+    mass: 2,
+  } as Transition
+};
 
 const ContactMe: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,35 +44,45 @@ const ContactMe: React.FC = () => {
 
   return (
     <div className="contact-container">
-      {/* "Contact Me" button, visible on both mobile and desktop */}
-      <button
-        className="contact-button"
+      <motion.button
+        initial={animationProps.initial}
+        animate={animationProps.animate}
+        whileTap={animationProps.whileTap}
+        transition={animationProps.transition}
         onClick={toggleContactBox}
+        className={cn(
+          "relative rounded-lg px-8 py-4 font-medium backdrop-blur-xl transition-shadow duration-300 ease-in-out hover:shadow dark:bg-[radial-gradient(circle_at_50%_0%,hsl(var(--primary)/10%)_0%,transparent_60%)] dark:hover:shadow-[0_0_20px_hsl(var(--primary)/10%)]",
+          "contact-button"
+        )}
         style={{
-          backgroundColor: '#94a3b8',
-          color: 'black',
-          padding: '14px 24px',
-          borderRadius: '10px',
-          border: 'none',
-          fontSize: '16px',
-          fontWeight: '600',
-          cursor: 'pointer',
-          transition: 'all 0.3s ease',
-          display: 'block', // Ensure the button is visible on both mobile and desktop
+          backgroundColor: "#e0e0e0", // Light gray background
+          color: 'black', // Text color
         }}
       >
-        Tap Here!!
-      </button>
+        <span
+          className="relative block size-full text-sm uppercase tracking-wide text-[rgb(0,0,0,65%)] dark:font-light dark:text-[rgb(255,255,255,90%)]"
+        >
+          Contact Me !!
+        </span>
+        <span
+          style={{
+            mask: "linear-gradient(rgb(0,0,0), rgb(0,0,0)) content-box,linear-gradient(rgb(0,0,0), rgb(0,0,0))",
+            maskComposite: "exclude",
+          }}
+          className="absolute inset-0 z-10 block rounded-[inherit] bg-[linear-gradient(-75deg,hsl(var(--primary)/10%)_calc(var(--x)+20%),hsl(var(--primary)/50%)_calc(var(--x)+25%),hsl(var(--primary)/10%)_calc(var(--x)+100%))] p-px"
+        ></span>
+      </motion.button>
 
       {/* Contact details section (WhatsApp, Email) */}
       {isOpen && (
         <div
           className="contact-details"
           style={{
-            position: 'absolute',
+            position: 'fixed',
             bottom: '70px',
             right: '20px',
             width: '320px',
+            maxWidth: '90vw',
             padding: '20px',
             backgroundColor: '#fff',
             borderRadius: '15px',
@@ -83,7 +116,7 @@ const ContactMe: React.FC = () => {
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#128C7E')}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#25D366')}
             >
-              <FaWhatsapp className="inline-block mr-2" size={20} /> {/* WhatsApp Icon */}
+              <FaWhatsapp className="inline-block mr-2" size={20} />
               Chat on WhatsApp
             </button>
 
@@ -104,7 +137,7 @@ const ContactMe: React.FC = () => {
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#005bb5')}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#0073e6')}
             >
-              <AiOutlineMail className="inline-block mr-2" size={20} /> {/* Gmail Icon */}
+              <AiOutlineMail className="inline-block mr-2" size={20} />
               Write me a mail
             </button>
           </div>
@@ -119,14 +152,48 @@ const ContactMe: React.FC = () => {
           z-index: 1000;
         }
 
-        /* Ensure the "Contact Me" button is visible on both mobile and desktop */
         .contact-button {
-          display: block; /* Ensure button is always visible */
+          display: block;
+          z-index: 1001;
+          position: relative;
+          background: transparent;
+          border: 2px solid transparent;
+          border-radius: 12px;
+          overflow: hidden;
         }
 
-        /* Hide the contact details until the button is clicked */
+        .contact-button::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(45deg, #1c1c1c, #444444, #1c1c1c, #444444); /* Dark gradient */
+          background-size: 400%;
+          animation: shine 2s linear infinite;
+          z-index: -1;
+        }
+
+        /* Shiny animation keyframe */
+        @keyframes shine {
+          0% {
+            background-position: 400% 0;
+          }
+          100% {
+            background-position: -400% 0;
+          }
+        }
+
         .contact-details {
-          display: ${isOpen ? 'block' : 'none'}; /* Toggle visibility based on state */
+          display: ${isOpen ? 'block' : 'none'};
+          
+          @media (max-width: 480px) {
+            width: calc(100vw - 40px);
+            right: 20px;
+            left: 20px;
+            max-width: none;
+          }
         }
       `}</style>
     </div>
