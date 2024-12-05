@@ -101,5 +101,8 @@
     align-items: center;
     margin-left: 25%;
    }
-  
+  .connect{
+    font-size: 2rem; /* 18px */
+line-height: 2.5rem; /* 28px */
+  }
 }
