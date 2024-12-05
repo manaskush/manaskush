@@ -16,6 +16,7 @@ import ContactMe from "@/components/ui/hireme";
 import { DockDemo } from "@/components/demos/dock-demo";
 import { cn } from "@/lib/utils";
 import ShinyButton from "@/components/ui/shiny-button";
+import { BackgroundLinesDemo } from "@/components/demos/background-lines-demo";
 
 
 
@@ -261,12 +262,61 @@ export default function Home() {
                 </ScrollLink>
             ))}
 
+            
             {/* <Dialog>
               <DialogTrigger className="border px-4 py-3 rounded-xl 
               text-center flex items-center justify-center
-               cursor-pointer hover:bg-gray-50">Contact</DialogTrigger>
+               cursor-pointer hover:bg-gray-50">About Me</DialogTrigger>
               <DialogContent>
-                <InlineWidget url="" />
+              <div className="md:flex md:gap-x-10 items-center ">
+            <Image
+              src={"/images/manas.jpg"}
+              alt="Manas"
+              width={10000}
+              height={10000}
+              className="rounded-xl w-40 mt-4 profile"
+            />
+
+            <div className="space-y-2">
+            <motion.div
+              style={{
+                paddingRight: "15px",
+                display: "inline-block",
+              }}
+              animate={{ rotate: [0, 20, 0] }}
+              transition={{
+                duration: 1,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatDelay: 0,
+              }}
+              className="text-4xl  my-4  "
+            >
+              👋
+            </motion.div>
+
+              <h1 className="text-xl lg:text-4xl font-semibold">
+                <Typewriter
+                  words={["Hi, I am Manas Kush !! I build things for the web."]}
+                  cursor
+                />
+              </h1>
+
+              <p className="text-muted-foreground text-lg md:pr-8">
+            A passionate innovator and problem-solver who thrives on turning ideas into impactful solutions. With creativity, determination, and a drive to excel, I aim to make a difference in every project I take on. Let&apos;s create something amazing together! 🌟</p>
+              <p className="text-muted-foreground text-lg ">
+                Feel free to reach out to me on{" "}
+                <LinkPreview
+                  url="https://discord.gg/WgfqpPRn"
+                  className="font-bold"
+                >
+                  <PiDiscordLogoFill className="h-6 w-6 inline text-indigo-500" />{" "}
+                  <span className="text-indigo-500 underline ">Discord</span>
+                </LinkPreview>{" "}
+                I am always happy to help.
+              </p>
+            </div>
+          </div>
               </DialogContent>
             </Dialog>    */}
 
@@ -276,15 +326,90 @@ export default function Home() {
 
 
 
-        <div className="md:w-3/5 mx-auto px-6 md:px-0 pb-20 ">
-          <div className="pt-10 justify-end items-center flex underline md:hidden">
-            {/* <Dialog>
-              <DialogTrigger>Contact</DialogTrigger>
-              <DialogContent>
-                <InlineWidget url="https://calendly.com/birdsoftware/15min" />
-              </DialogContent>
-            </Dialog> */}
-          </div>
+        <div className="md:w-3/5 mx-auto px-6  md:px-0 pb-20 ">
+         
+         
+         
+        {/* <div className="pt-10 justify-end items-center flex underline md:hidden">
+  <Dialog>
+    <DialogTrigger className="cursor-pointer pt-10  underline md:hidden text-center flex items-center justify-center rounded-xl border-0 px-8 py-2 font-medium bg-[length:200%] hover:bg-gray-50 transition-colors">
+      About Me
+    </DialogTrigger>
+    <DialogContent>
+      <p className="text-muted-foreground text-lg md:pr-8">
+        A passionate innovator and problem-solver who thrives on turning ideas into impactful solutions. With creativity, determination, and a drive to excel, I aim to make a difference in every project I take on. Let&apos;s create something amazing together! 🌟
+      </p>
+    </DialogContent>
+  </Dialog>
+</div> */}
+
+          <BackgroundLinesDemo/>
+          
+          
+          
+          
+          <Dialog>
+  
+  <DialogTrigger className="hidden text-slate-600 md:flex border px-6 py-2 text-xl transition-shadow duration-300 ease-in-out hover:shadow dark:bg-[radial-gradient(circle_at_50%_0%,hsl(var(--primary)/10%)_0%,transparent_60%)] dark:hover:shadow-[0_0_20px_hsl(var(--primary)/10%)] font-medium rounded-xl text-center  items-center justify-center cursor-pointer hover:bg-gray-50">
+    ABOUT ME
+  </DialogTrigger>
+  <DialogContent>
+    <div className="hidden md:flex md:gap-x-10 items-center">
+      <Image
+        src={"/images/manas.jpg"}
+        alt="Manas"
+        width={10000}
+        height={10000}
+        className="rounded-xl w-40 mt-4 profile"
+      />
+
+      <div className="space-y-2">
+        <motion.div
+          style={{
+            paddingRight: "15px",
+            display: "inline-block",
+          }}
+          animate={{ rotate: [0, 20, 0] }}
+          transition={{
+            duration: 1,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatDelay: 0,
+          }}
+          className="text-4xl my-4"
+        >
+          👋
+        </motion.div>
+
+        <h1 className="text-xl lg:text-4xl font-semibold">
+          <Typewriter words={["Hi, I am Manas Kush !! I build things for the web."]} cursor />
+        </h1>
+
+        <p className="text-muted-foreground text-lg md:pr-8">
+          A passionate innovator and problem-solver who thrives on turning ideas into impactful solutions. With creativity, determination, and a drive to excel, I aim to make a difference in every project I take on. Let&apos;s create something amazing together! 🌟
+        </p>
+        <p className="text-muted-foreground text-lg">
+          Feel free to reach out to me on{" "}
+          <LinkPreview url="https://discord.gg/WgfqpPRn" className="font-bold">
+            <PiDiscordLogoFill className="h-6 w-6 inline text-indigo-500" />{" "}
+            <span className="text-indigo-500 underline">Discord</span>
+          </LinkPreview>{" "}
+          I am always happy to help.
+        </p>
+      </div>
+    </div>
+  </DialogContent>
+</Dialog>
+
+
+
+
+
+
+
+
+            <div className="block md:hidden">   
+         
 
           <div className="md:flex md:gap-x-10 items-center md:pt-28">
             <Image
@@ -335,11 +460,12 @@ export default function Home() {
               </p>
             </div>
           </div>
+          </div>
           <Element name="resume" className="mt-10 resume  bg-white center-on-phone">
             <ShinyButton>
-            <a href="https://drive.google.com/file/d/1ilo2yAErvclwL3EEbs1HX8hBSYEHIWgO/view?usp=sharing" className="text-xl  resumei rounded-xl p-4 pt-15 font-semibold">
+            <div  className="text-xl  resumei rounded-xl  pt-15 font-semibold">
             View My Resume
-            </a>
+            </div>
             </ShinyButton>
           </Element>
           
