@@ -13,6 +13,7 @@ import { Link as ScrollLink, Element } from "react-scroll";
 import IconCloud from "@/components/ui/icon-cloud";
 import HireFreelancer from "@/components/ui/hireme";
 import ContactMe from "@/components/ui/hireme";
+import { DockDemo } from "@/components/demos/dock-demo";
 
 
 
@@ -50,13 +51,13 @@ const projects = [
 
 const experience = [
   {
-  title: "Full Stack Developer | Intern",
+  title: "Full Stack Developer | Full-Time ",
   description: "MysticGrafix",
   date: "Sept 2024 - Today",
   image: "/images/mysticgrafix.jpg",
 },
 {
-  title: "Software Engineer | Intern",
+  title: "Software Engineer | Intern | Part-Time",
   description: "MyFurries",
   date: "October 2024 - Today",
   image: "/images/myfurries.jpg",
@@ -85,7 +86,7 @@ const education = [
   },
   {
     title: "Xth Board Exam",
-    description: "95% Marks",
+    description: "94% Marks",
     date: "2020",
     image: "/images/ami.png",
   },
@@ -550,8 +551,17 @@ export default function Home() {
             ))}
           </Element>
           <Element className="mt-10 hireme" name="hireme">
-          <ContactMe/>
+            <ContactMe/>
           </Element>
+          <Element name="footer">
+  <div className="relative flex h-[250px] w-full flex-col items-center justify-center overflow-hidden">
+    <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+      Connect on Socials
+    </span>
+    <DockDemo />
+  </div>
+</Element>
+
         </div>
       </motion.div>
     </div>

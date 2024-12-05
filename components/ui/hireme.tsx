@@ -38,7 +38,7 @@ const ContactMe: React.FC = () => {
           display: 'block', // Ensure the button is visible on both mobile and desktop
         }}
       >
-        Contact Me
+        Tap Here!!
       </button>
 
       {/* Contact details section (WhatsApp, Email) */}
