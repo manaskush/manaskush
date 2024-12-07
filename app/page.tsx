@@ -17,6 +17,7 @@ import { DockDemo } from "@/components/demos/dock-demo";
 import { cn } from "@/lib/utils";
 import ShinyButton from "@/components/ui/shiny-button";
 import { BackgroundLinesDemo } from "@/components/demos/background-lines-demo";
+import { Iphone15ProDemo } from "@/components/demos/iphone-15-pro-demo";
 
 
 
@@ -25,33 +26,34 @@ const projects = [
     title: "Prospera",
     description: "Career Counselling Website",
     link:"https://prospera-psi.vercel.app/",
-    date: "2024-2025",
-    image: "/images/logo.webp",
+    date: "2024",
+    image: "/images/prosperas.png",
   },
   {
     title: "WeCare",
     description: "Clinic Website",
     link:"https://wecarephysiotherapy.com/",
-    date: "2024-2025",
-    image: "/images/wecare.webp",
+    date: "2024",
+    image: "/images/wecares.png",
   },
 
   {
     title: "Ventes E-Commerce",
     description: "E-commerce platform for digital products",
     link:"https://ventesinfotech-wqb5.vercel.app/",
-    date: "2024-2025",
-    image: "/images/uploadify.png",
+    date: "2024",
+    image: "/images/ventess.png",
   },
   {
-    title: "Satoshi Farm Telegram Game",
-    description: "Telegram Game for CryptoCommerce",
-    link:"https://t.me/SATOSHI_FARMS_BOT/Satoshi_Farms?startapp=5474783563",
-    date: "2024-2025",
-    image: "/images/ecomify.png",
+    title: "Refokuss Clone ",
+    description: "React + Tailwind CSS project",
+    link:"https://refokus-clone-one.vercel.app/",
+    date: "2022",
+    image: "/images/refokuss.png",
   },
+  
 ];
-
+const telgramurl="https://t.me/SATOSHI_FARMS_BOT/Satoshi_Farms?startapp=5474783563"
 const experience = [
   {
   title: "Full Stack Developer | Full-Time ",
@@ -578,45 +580,36 @@ export default function Home() {
             ))}
           </Element>
 
-          <Element
-          name="projects"
-          
-          >
-            <h2 className="text-xl pt-10 font-semibold">Projects</h2>
-            <div className="grid grid-cols-2 gap-4 mt-5">
-              {projects.map((project) => (
-                <a
-                  href={project.link}
-                  key={project.title}
-                  className="border rounded-xl p-4 bg-white"
-                >
-                  <div className="md:flex items-center justify-between">
-                    <div className="md:flex items-center gap-x-4">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        width={100}
-                        height={100}
-                        className="rounded-md w-16 h-16"
-                      />
-
-                      <div className="flex flex-col ">
-                        <h2 className="text-md font-semibold ">
-                          {project.title}
-                        </h2>
-                        <p className="text-muted-foreground text-sm">
-                          {project.description}
-                        </p>
-                      </div>
-                    </div>
-                    <p className="text-muted-foreground text-sm mt-2 md:mt-0">
-                      {project.date}
-                    </p>
-                  </div>
-                </a>
-              ))}
-            </div>
+          <Element name="projects">
+  <h2 className="text-2xl font-semibold mb-8">Featured Projects</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+    {projects.map((project) => (
+      <a
+        href={project.link}
+        key={project.title}
+        className="border rounded-xl p-4 bg-white hover:bg-gray-50 transition-all duration-300"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div className="flex flex-col items-center">
+          <Image
+            src={project.image}
+            alt={project.title}
+            width={800}  // Standardized width
+            height={500} // Standardized height
+            className="rounded-md mb-4"
+          />
+          <h3 className="text-lg font-semibold mb-2 text-center">{project.title}</h3>
+          <p className="text-sm text-gray-600 text-center">{project.description}</p>
+        </div>
+      </a>
+    ))}
+  </div>
+</Element>
+<Element name="iphone">
+<a href="https://t.me/SATOSHI_FARMS_BOT/Satoshi_Farms?startapp=5474783563"><Iphone15ProDemo/></a>
           </Element>
+
 
           <Element name="skillheader">
             <h1  className="text-xl pt-10 font-semibold justify-center ">Skill Globe</h1>
