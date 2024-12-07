@@ -160,12 +160,12 @@ const navbar = [
 
 const icons = [
   // Programming Languages
-  'javascript', 'typescript', 'python', 'java', 'cpp', 'rust', 'go', 'php', 'c',
+  'javascript', 'typescript', 'python', 'java', 'cpp', 'php', 'c',
   
   // Web Technologies
   'react', 'nextdotjs',  'svelte', 'nodejs', 'express', 
   // Mobile Development
-  'kotlin', 'reactnative', 'flutter','expo', 
+  // 'kotlin', 'reactnative', 'flutter','expo', 
   
   // Cloud & DevOps
   'amazonaws', 'googlecloud', 'docker', 'kubernetes',  'github', 
@@ -186,7 +186,7 @@ const icons = [
     'jupyter', 'numpy', 'pandas', 
   
   // Other Tools & Technologies
-  'git', 'npm', 'yarn', 'vscode', 'visualstudiocode', 'postman', 'figma', 'adobexd', 'linux', 'macos', 'windows'
+  'git', 'npm', 'vscode', 'visualstudiocode', 'postman', 'figma', 'linux', 'macos', 'windows'
 ]
 
 
