@@ -18,41 +18,46 @@ import { cn } from "@/lib/utils";
 import ShinyButton from "@/components/ui/shiny-button";
 import { BackgroundLinesDemo } from "@/components/demos/background-lines-demo";
 import { Iphone15ProDemo } from "@/components/demos/iphone-15-pro-demo";
-
+import { FaReact, FaCss3Alt, FaHtml5, FaJsSquare, FaCss3,} from "react-icons/fa";
+import { DiJsBadge,DiNodejs } from "react-icons/di";
+import { SiNextdotjs , SiTypescript,SiExpress,SiFramer } from "react-icons/si";
 
 
 const projects = [
   {
     title: "Prospera",
     description: "Career Counselling Website",
-    link:"https://prospera-psi.vercel.app/",
+    link: "https://prospera-psi.vercel.app/",
     date: "2024",
     image: "/images/prosperas.png",
+    techStack: ["FaReact", "DiJsSquare", "SiNextdotjs", "FaCss3Alt","SiTypescript"], // Use tech names
   },
   {
     title: "WeCare",
     description: "Clinic Website",
-    link:"https://wecarephysiotherapy.com/",
+    link: "https://wecarephysiotherapy.com/",
     date: "2024",
     image: "/images/wecares.png",
+    techStack: ["SiNextdotjs","FaReact", "FaCss3Alt","DiJsSquare", "SiFramer"],
   },
-
   {
     title: "Ventes E-Commerce",
     description: "E-commerce platform for digital products",
-    link:"https://ventesinfotech-wqb5.vercel.app/",
+    link: "https://ventesinfotech-wqb5.vercel.app/",
     date: "2024",
     image: "/images/ventess.png",
+    techStack: ["SiNextdotjs","FaReact", "SiFramer", "FaCss3Alt","DiJsSquare","SiExpress"],
   },
   {
-    title: "Refokuss Clone ",
+    title: "Refokuss Clone",
     description: "React + Tailwind CSS project",
-    link:"https://refokus-clone-one.vercel.app/",
+    link: "https://refokus-clone-one.vercel.app/",
     date: "2022",
     image: "/images/refokuss.png",
+    techStack: ["FaReact", "FaTailwindcss","DiJsSquare","SiFramer"],
   },
-  
 ];
+
 const telgramurl="https://t.me/SATOSHI_FARMS_BOT/Satoshi_Farms?startapp=5474783563"
 const experience = [
   {
@@ -199,7 +204,17 @@ export default function Home() {
   const { scrollY } = useScroll();
   const lastYRef = useRef(0);
   const phoneNumber=8534982098;
-
+  const iconMapping: { [key in "FaReact" | "FaCss3Alt" | "FaHtml5" | "FaJsSquare"  | "DiJsSquare" | "SiNextdotjs" | "SiTypescript"|"SiExpress"| "SiFramer" ]: JSX.Element } = {
+    FaReact: <FaReact className="text-blue-500 w-6 h-6" />,
+    FaCss3Alt: <FaCss3Alt className="text-blue-500 w-6 h-6" />,
+    FaHtml5: <FaHtml5 className="text-orange-500 w-6 h-6" />,
+    FaJsSquare: <FaJsSquare className="text-yellow-500 w-6 h-6" />,
+    DiJsSquare: <DiJsBadge className="text-yellow-500 w-6 h-6" />,
+    SiNextdotjs: <SiNextdotjs className="text-black w-6 h-6" />,
+    SiTypescript: <SiTypescript className="text-blue-600 w-6 h-6" />, // Added SiTypescript
+    SiExpress:   <SiExpress className="text-brown-800 w-6 h-6" />,
+    SiFramer:   <SiFramer className="text-green-600 w-6 h-6" />, // Added SiFramer
+  };
   useMotionValueEvent(scrollY, 'change', (y) => {
     const difference = y - lastYRef.current;
     if (Math.abs(difference) > 50) {
@@ -587,7 +602,7 @@ export default function Home() {
       <a
         href={project.link}
         key={project.title}
-        className="border rounded-xl p-4 bg-white hover:bg-gray-50 transition-all duration-300"
+        className="border border-gray-300 rounded-xl p-4 bg-white hover:bg-gray-50 transition-all duration-300"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -595,17 +610,35 @@ export default function Home() {
           <Image
             src={project.image}
             alt={project.title}
-            width={800}  // Standardized width
-            height={500} // Standardized height
-            className="rounded-md mb-4"
+            width={800}
+            height={500}
+            className="rounded-md mb-4 border transform transition-transform duration-300 hover:scale-105"
           />
           <h3 className="text-lg font-semibold mb-2 text-center">{project.title}</h3>
           <p className="text-sm text-gray-600 text-center">{project.description}</p>
+
+          {/* Display Tech Stack Icons */}
+          <div className="flex justify-center gap-3 mt-4">
+            {project.techStack.map((tech, index) => (
+              <span
+                key={index}
+                className="inline-block w-8 h-8 rounded-full  items-center justify-center"
+              >
+                {/* Dynamically render the icons */}
+                {iconMapping[tech as keyof typeof iconMapping]}
+              </span>
+            ))}
+          </div>
         </div>
       </a>
     ))}
   </div>
 </Element>
+
+
+
+
+
 <Element name="iphone">
 <a href="https://t.me/SATOSHI_FARMS_BOT/Satoshi_Farms?startapp=5474783563"><Iphone15ProDemo/></a>
           </Element>
