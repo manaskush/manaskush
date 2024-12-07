@@ -104,10 +104,10 @@ const skills =  [
     title: 'Web Technologies',
     description: "React, Next.js, Svelte, Node.js, Express, Redux",
   },
-  {
-    title: 'Mobile Development',
-    description: "Kotlin, React Native, Flutter, Expo",
-  },
+  // {
+  //   title: 'Mobile Development',
+  //   description: "Kotlin, React Native, Flutter, Expo",
+  // },
   {
     title: 'Cloud & DevOps',
     description: "AWS, Google Cloud, Docker, Kubernetes, GitHub",
@@ -130,7 +130,7 @@ const skills =  [
   },
   {
     title: 'Other Tools & Technologies',
-    description: "Git, npm, Yarn, VSCode, Postman, Figma, Adobe XD, Linux, macOS, Windows",
+    description: "Git, npm, Yarn, VSCode, Postman, Figma, Linux, macOS, Windows",
   },
 ];
 
