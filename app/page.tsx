@@ -21,6 +21,7 @@ import { Iphone15ProDemo } from "@/components/demos/iphone-15-pro-demo";
 import { FaReact, FaCss3Alt, FaHtml5, FaJsSquare, FaCss3,} from "react-icons/fa";
 import { DiJsBadge,DiNodejs } from "react-icons/di";
 import { SiNextdotjs , SiTypescript,SiExpress,SiFramer } from "react-icons/si";
+import Head from "next/head";
 
 
 const projects = [
@@ -229,7 +230,31 @@ export default function Home() {
   };
 
 
-  return (
+  return (<>
+    <Head>
+    <title>Manas Kush | Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Manas Kush is a Full-Stack Developer specializing in building web applications using Next.js, React, and more."
+    />
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Manas Kush",
+          "url": "https://manaskush.vercel.app",
+          "description": "Manas Kush is a versatile Full-Stack Developer specializing in web applications using Next.js and React.",
+          "jobTitle": "Full-Stack Developer",
+          "sameAs": [
+            "https://linkedin.com/in/manas-kush",
+            "https://github.com/manaskush"
+          ]
+        }),
+      }}
+    />
+  </Head>
     <div>
       <motion.div
        initial={{ y: 0, opacity: 0 }}
@@ -374,7 +399,7 @@ export default function Home() {
     <div className="hidden md:flex md:gap-x-10 items-center">
       <Image
         src={"/images/manas.jpg"}
-        alt="Manas"
+         alt="Manas Kush, Full-Stack Developer"
         width={10000}
         height={10000}
         className="rounded-xl w-40 mt-4 profile"
@@ -472,7 +497,7 @@ export default function Home() {
             </div>
             <Image
               src={"/images/manas.jpg"}
-              alt="Manas"
+              alt="Manas Kush, Full-Stack Developer"
               width={10000}
               height={10000}
               className="rounded-xl w-40 mt-4 z-150 profile"
@@ -737,5 +762,6 @@ export default function Home() {
         </div>
       </motion.div>
     </div>
+    </>
   );
 }
