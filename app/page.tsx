@@ -655,7 +655,7 @@ export default function Home() {
                md:flex justify-between 
               cursor-pointer items-center 
               border rounded-2xl p-4
-              bg-white
+              bg-white shadow-md hover:shadow-lg
               "
                   >
                     <div className="flex items-center gap-x-4">
@@ -694,12 +694,12 @@ export default function Home() {
 
             <Element name="projects">
               <h2 className="text-2xl font-semibold mb-8">Featured Projects</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 ">
                 {projects.map((project) => (
                   <a
                     href={project.link}
                     key={project.title}
-                    className="border border-gray-300 rounded-xl p-4 bg-white hover:bg-gray-50 transition-all duration-300"
+                    className="border border-gray-300 rounded-xl p-4 bg-white hover:bg-gray-50 transition-all duration-300  hover:shadow-lg"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -783,7 +783,7 @@ export default function Home() {
                     className="
                md:flex justify-between 
               cursor-pointer items-center border rounded-2xl p-4
-              bg-white
+              bg-white shadow-md hover:shadow-lg 
               
               "
                   >
