@@ -489,7 +489,7 @@ export default function Home() {
                     <h1 className="text-xl lg:text-4xl font-semibold">
                       <Typewriter
                         words={[
-                          "Hi, I am Manas Kush !! I build things for the web.",
+                          "Hi, I am Manas Kush !! A Full Stack web dev focusing on building focuising on building scalable websites for clients.",
                         ]}
                         cursor
                       />
@@ -543,7 +543,7 @@ export default function Home() {
                   <h1 className="text-xl lg:text-4xl font-semibold">
                     <Typewriter
                       words={[
-                        "Hi, I am Manas Kush !! I build things for the web.",
+                        "Hi, I am Manas Kush !! A Full Stack web dev focusing on building focuising on building scalable websites for clients..",
                       ]}
                       cursor
                     />

@@ -11,7 +11,7 @@ export function BackgroundLinesDemo() {
         Manas Kush, <br /> Full Stack Developer
       </h2>
       <p className="max-w-xl mx-auto text-xl md:text-2xl text-neutral-700 dark:text-neutral-400 text-center">
-      I build things for the web.
+      A Cracked Dev focuisng on building scalable SaaS and Web Projects for Companies and Clients.
         </p>
          
     </BackgroundLines>
