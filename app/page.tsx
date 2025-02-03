@@ -85,7 +85,8 @@ const projects = [
 
 const telgramurl =
   "https://t.me/SATOSHI_FARMS_BOT/Satoshi_Farms?startapp=5474783563";
-const experience = [
+
+  const experience = [
   {
     title: "Full Stack Developer | Full-Time ",
     description: "MysticGrafix",
@@ -99,9 +100,15 @@ const experience = [
     image: "/images/myfurries.jpg",
   },
   {
+    title: "Technical Expert | Part-Time ",
+    description: "Geek Room",
+    date: "Dec 2024 - Today",
+    image: "/images/geekroom.jpg",
+  },
+  {
     title: "Senior Technical Associate ",
     description: "M.L.S.A.",
-    date: "September 2024 - Today",
+    date: "September 2024 - Feb 2025",
     image: "/images/mlsa.jpg",
   },
 ];
