@@ -1,11 +1,20 @@
-👋 Hi, I’m @manaskush
+Hello, I'm Manas Kush 👋
+About Me
 
-👀 I’m interested in Web and Android Development,WEB 3 and Blockchain
+    🚀 Full Stack Developer | Android Enthusiast | Web3 and Blockchain Enthusiast
+    🔭 I’m currently working on Develpoping my skills in above topics
+    🌱 I’m currently learning React,Kotlin and Cloud Computing
+    💬 Ask me about Tech,Movies and Sports
+    📫 How to reach me: manaskush311@gmail.com
 
-🌱 I’m currently learning React and Blockchain development
+Skills
 
-💞️ I’m looking to collaborate on different MERN Stack and Web Application projects
+    Languages: JavaScript , Java, Python, C and C++
+    Frameworks/Libraries: React
+    Tools/Technologies: MERN STACK and Android Dev
 
-📫 How to reach me -- Mail at manaskush311@gmail.com
+Connect with Me
 
-⚡ Fun fact: I can make others do the job for me
+    GitHub: (https://github.com/manaskush/-manaskush-.github.io)
+    LinkedIn: (https://www.linkedin.com/in/manas-kush-7a22b3184/)
+    Portfolio: [To be uploaded soon]
