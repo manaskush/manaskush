@@ -90,13 +90,13 @@ const telgramurl =
   {
     title: "Full Stack Developer | Full-Time ",
     description: "MysticGrafix",
-    date: "Sept 2024 - Today",
+    date: "Sept 2024 - March 2025",
     image: "/images/mysticgrafix.jpg",
   },
   {
     title: "Software Engineer | Intern | Part-Time",
     description: "MyFurries",
-    date: "October 2024 - Today",
+    date: "October 2024 - January 2025",
     image: "/images/myfurries.jpg",
   },
   {
