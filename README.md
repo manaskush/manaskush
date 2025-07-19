@@ -17,4 +17,4 @@ Connect with Me
 
     GitHub: (https://github.com/manaskush/-manaskush-.github.io)
     LinkedIn: (https://www.linkedin.com/in/manas-kush-7a22b3184/)
-    Portfolio: [To be uploaded soon]
+    Portfolio: (https://manaskush.vercel.app)
