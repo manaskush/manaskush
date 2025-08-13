@@ -61,7 +61,7 @@ const projects = [
   {
     title: "Ventes E-Commerce",
     description: "E-commerce platform for digital products",
-    link: "https://ventesinfotech-wqb5.vercel.app/",
+    link: "https://ventesinfotech.vercel.app/",
     date: "2024",
     image: "/images/ventess.png",
     techStack: [
